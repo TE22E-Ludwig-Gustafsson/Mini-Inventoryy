@@ -20,14 +20,36 @@ public class Main {
         System.out.println("Start väska");
         player.backpack.display();
 
-        //Visa spelaren en ny hjälm och fråga om den vill ta upp den
-        Armor helmet = new Armor("Sigurts heliga hjälm", 2f,5);
-        System.out.println("\nDu hittade en legendarisk hjälm, vill du plocka up den? (Y/N): ");
-        String input = scanner.nextLine().trim().toLowerCase();
+        //Skapa nya skyddsalternativ
+        Armor helmet = new Armor("Sigurdshelmen av Skymningsväktare", 2f,5);
+        Armor chestplate = new Armor("Zeus Gyllenbrynja av Åsksmidets Eld", 5f, 10);
+        Armor Shoes = new Armor("Hades Sabatoner3 från Underjordens Flammor", 2f,3);
 
-        if (input.equals("y")) {
-            player.backpack.addItem(helmet);
-            System.out.println("Sigurts heliga hjälm är tillagd i din väska.");
+        //Visa spelaren dem nya skyddsutrustningarna och fråga vilken den vill ta upp den
+        System.out.println("\nDu hittade 3 olika delar av skydd, välj en av dem:");
+        System.out.println("1. Helmet (Protection: 5, Weight: 1.5)");
+        System.out.println("2. Chestplate (Protection: 15, Weight: 3.0)");
+        System.out.println("3. Boots (Protection: 3, Weight: 1.0)");
+
+        System.out.println("\nSkriv ett number av dem 3 delarna som du vill plocka up (1, 2, 3): ");
+        int val = scanner.nextInt();
+
+        switch (val) {
+            case 1:
+                player.backpack.addItem(helmet);
+                System.out.println("Du plockade up " + helmet.name);
+                break;
+            case 2:
+                player.backpack.addItem(chestplate);
+                System.out.println("Du plockade up " + chestplate.name);
+                break;
+            case 3:
+                player.backpack.addItem(Shoes);
+                System.out.println("Du plockade up " + Shoes.name);
+                break;
+            default:
+                System.out.println("Ogiltigt svar. inget lades till i din väska.");
+                break;
         }
 
         System.out.println("\nUppdaterad väska:");
