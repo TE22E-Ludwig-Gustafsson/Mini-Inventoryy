@@ -23,7 +23,7 @@ public class Main {
         //Skapa nya skyddsalternativ
         Armor helmet = new Armor("Sigurdshelmen av Skymningsväktare", 2f,5);
         Armor chestplate = new Armor("Zeus Gyllenbrynja av Åsksmidets Eld", 5f, 10);
-        Armor Shoes = new Armor("Hades Sabatoner3 från Underjordens Flammor", 2f,3);
+        Armor Shoes = new Armor("Hades Sabatoner från Underjordens Flammor", 2f,3);
 
         //Visa spelaren dem nya skyddsutrustningarna och fråga vilken den vill ta upp den
         System.out.println("\nDu hittade 3 olika delar av skydd, välj en av dem:");
